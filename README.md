@@ -1,6 +1,6 @@
 # Space Debris Tracking and Avoidance using Data Structures and Algorithms
 
-Official implementation of the Data Structures and Algorithms course project **"Space Debris Tracking and Avoidance using Data Structures and Algorithms"** at SVKM's NMIMS MPSTME, Mumbai. Everything is written in C99 with hand-written data structures and no external libraries in the core.
+Official implementation of the Data Structures and Algorithms course project **"Space Debris Tracking and Avoidance using Data Structures and Algorithms"** at SVKM's NMIMS MPSTME, Mumbai. 
 
 ![Runtime versus catalogue size](paper/figures/V13_runtime_vs_n.png)
 
@@ -8,8 +8,7 @@ Official implementation of the Data Structures and Algorithms course project **"
 
 Tens of thousands of active satellites and pieces of debris orbit Earth at 7 to 8 km/s in low Earth orbit. Operators must find every *conjunction*, a pair of objects that will pass closer than a screening distance, and checking every pair is O(n²) at every time step. This project implements the screening pipeline end to end: orbit propagation (Kepler, J2 and a hand-written SGP4), three screening methods (an altitude filter, a hashed uniform grid and a k-d tree) measured against an all-pairs brute-force baseline, refinement of each candidate to its time and distance of closest approach, and a conjunction graph that is clustered, ranked (Top-K) and used to plan which objects to move (greedy against exact search). The data structures are a dynamic array, linked lists, stack, queue, binary heap, chained hash table, AVL tree, k-d tree, uniform grid and disjoint-set union (union-find), all written from scratch. The base paper is Gómez et al. (2022), whose linked-cell approach we re-implement and compare directly with a k-d tree.
 
-**Authors:** Vedant Pathak (R045), Dhairya Shah (R057), Kanishak Thakran (R046)
-**Course:** Data Structures and Algorithms · **Faculty:** Prateeksha Shanoj
+**Authors:** Vedant Pathak, Dhairya Shah, Kanishak Thakran
 
 **Note:** The real catalogue is public CelesTrak data (19,440 objects, downloaded 2026-10-20) and is *not* included in this repository (see [data/README.md](data/README.md)). Synthetic catalogues come from a seeded generator and are included, with planted close pairs whose answers are known exactly. This is a simplified model for a course project, not an operational collision-avoidance tool: there are no covariances and no collision probabilities (see [docs/known_limitations.md](docs/known_limitations.md)).
 
@@ -162,20 +161,12 @@ The model is simplified (no covariance, no collision probability, one catalogue 
 
 ## Citation
 
-Base paper:
-
-```
-Gómez, P., Gratl, F., Bösing, O., Izzo, D. (2022). Deterministic Conjunction Tracking
-in Long-term Space Debris Simulations. 3rd IAA Conference on Space Situational Awareness.
-arXiv:2203.06957
-```
-
 If you use this code or results, please cite:
 
 ```
 @misc{pathak2026spacedebris,
   title  = {Space Debris Tracking and Avoidance using Data Structures and Algorithms},
-  author = {Pathak, Vedant and Shah, Dhairya and Thakran, Kanishak},
+  author = {Vedant, Kanishak, Dhairya},
   year   = {2026},
   url    = {https://github.com/withvedantpathak/Space_Debris_Tracking_And_Avoidance_using_DataStructuresAndAlgorithms}
 }
