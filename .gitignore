@@ -24,11 +24,3 @@ Thumbs.db
 
 # copyrighted papers (do not push)
 docs/papers/
-
-
-# internal working notes (kept local, not published)
-team/
-docs/ai_assistance.md
-docs/research_notes.md
-docs/visualisations.md
-docs/papers/
