@@ -1,0 +1,5 @@
+dataset,n,window_s,step_s,threshold_km,flags,pair_checks,candidates,refinements,events,pairs_with_events,close_at_start,cpu_seconds
+data/synthetic/synth_1000.csv,1000,86400,10.0,10.00,0,4315680000,37947,37947,760,363,0,6.364
+data/synthetic/synth_5000.csv,5000,21600,10.0,10.00,0,26994600000,227671,227671,3590,2475,0,33.855
+data/synthetic/synth_20000.csv,20000,3600,10.0,10.00,0,71996400000,615719,615719,9431,8865,6,89.186
+data/raw/active.csv,18208,3600,10.0,25.00,3,59672350080,1382737,1382737,70696,64700,206,76.787

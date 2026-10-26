@@ -1,0 +1,3 @@
+seed,n,method,repeat,cpu_seconds,pair_checks,candidates,events,peak_rss_kb
+1,50000,kd,1,45.384,28375035,3711555,56780,57892
+1,50000,grid,1,41.267,28375035,3711555,56780,59572

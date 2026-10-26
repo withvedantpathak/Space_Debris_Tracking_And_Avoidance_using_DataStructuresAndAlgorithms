@@ -1,0 +1,40 @@
+# id<TAB>file<TAB>old text (must occur exactly once)<TAB>new text<TAB>tests (all|oom)<TAB>description
+M01	src/ds/heap.c	if (h->a[p].key <= key) break;	if (h->a[p].key >= key) break;	all	heap sift-up compares the wrong way
+M02	src/ds/heap.c	h->a[c + 1].key < h->a[c].key	h->a[c + 1].key > h->a[c].key	all	heap sift-down picks the larger child
+M03	src/ds/heap.c	if (h->a[c].key >= last.key) break;	if (h->a[c].key > last.key) break;	all	heap sift-down stops on > instead of >= (equal keys; expected equivalent)
+M04	src/ds/dsu.c	if (d->size[a] < d->size[b])	if (d->size[a] > d->size[b])	all	union by size attaches the larger set under the smaller
+M05	src/ds/dsu.c	    d->comps--;	    ;	all	component counter not decremented on union
+M06	src/ds/dsu.c	d->parent[x] = d->parent[d->parent[x]];	d->parent[x] = x;	all	path compression detaches the node
+M07	src/ds/kdtree.c	int ax = (ex >= ey && ex >= ez) ? 0 : (ey >= ez ? 1 : 2);	int ax = 0;	all	k-d tree always splits on x (still correct, slower)
+M08	src/ds/kdtree.c	if (qc - r <= pc) rad_rec(	if (qc - r < pc) rad_rec(	all	k-d radius query prunes the left side on equality (boundary)
+M09	src/ds/kdtree.c	if (qc + r >= pc) rad_rec(	if (qc > pc) rad_rec(	all	k-d radius query never visits the right side when the query is left of the pivot
+M10	src/ds/grid.c	int span = (int)(r / g->cell) + 1;	int span = (int)(r / g->cell);	all	grid neighbourhood one cell too small
+M11	src/ds/grid.c	return (double)i > s ? i - 1 : i;	return i;	all	grid cell index truncates instead of flooring (negative coordinates)
+M12	src/ds/grid.c	if (d2 <= r2) fn(i, d2, ctx);	if (d2 < r2) fn(i, d2, ctx);	all	grid radius query excludes points exactly at the radius (boundary)
+M13	src/ds/avl.c	if (bal(n->l) < 0) n->l = rot_left(n->l); 	<EMPTY>	all	AVL left-right case without the first rotation
+M14	src/ds/avl.c	if (bal(n->r) > 0) n->r = rot_right(n->r); 	<EMPTY>	all	AVL right-left case without the first rotation
+M15	src/graph.c	dsu_union(&d, g->eu[e], g->ev[e]);	dsu_union(&d, g->eu[e], g->eu[e]);	all	DSU components ignore the second endpoint
+M16	src/graph.c	dist[w] = dist[v] + 1;	dist[w] = 1;	all	BFS hop distance not accumulated
+M17	src/mitigate.c	cur + matching_bound(g, el, ne, cnt, b->mark) >= best	cur + matching_bound(g, el, ne, cnt, b->mark) + 1 >= best	all	branch and bound prunes too eagerly (can return a non-optimal cover)
+M18	src/mitigate.c	mark[g->eu[e]] = mark[g->ev[e]] = 1; lb++;	mark[g->eu[e]] = mark[g->ev[e]] = 1; lb += 2;	all	matching lower bound counts every matched edge twice
+M19	src/rank.c	if (key[i] >= -top.key) continue;	if (key[i] > -top.key) continue;	all	top-K keeps equal keys (tie rule; fix-up pass should repair it)
+M20	src/rank.c	    if (K > n) K = n;	    ;	all	top-K without the K > n clamp (overflow only under UBSan)
+M21	src/catalog.c	if (ecc < 0 || ecc >= 1)	if (ecc < 0 || ecc > 1)	all	parser accepts eccentricity exactly 1
+M22	src/catalog.c	if (inc < 0 || inc > 180)	if (inc < 0 || inc > 181)	all	parser accepts inclination up to 181
+M23	src/catalog.c	if (o[i].mean_motion < mm_min) continue;	if (o[i].mean_motion <= mm_min) continue;	all	mean-motion scope filter excludes the boundary value
+M24	src/catalog.c	h > 23	h > 24	all	time parser accepts hour 24
+M25	src/propagate.c	if (fabs(dE) < 1e-14) break;	if (fabs(dE) < 1e-3) break;	all	Kepler solver stops at a loose tolerance
+M26	src/conjunction.c	reach = tij + L * h;	reach = tij + 0.5 * L * h;	all	brute-force skip bound too small (can drop real events)
+M27	src/conjunction.c	if (d0 + d1 - L * h > 2.0 * tij) continue;	if (d0 + d1 - L * h > 1.0 * tij) continue;	all	brute-force second pruning test too aggressive
+M28	src/conjunction.c	dm < tij && tm <= sp->window_s	dm < tij && tm < sp->window_s	all	event exactly at the end of the window dropped (boundary)
+M29	src/conjunction.c	fabs(E[j].tca - T[i].tca) <= tol	fabs(E[j].tca - T[i].tca) >= tol	all	event comparison matches only far-apart events
+M30	src/conjunction.c	if (c[j].miss_km < c[best].miss_km)	if (c[j].miss_km > c[best].miss_km)	all	best-per-pair keeps the farthest approach
+M31	src/screen.c	if (c->k == 0 && d0sq < thr * thr)	if (c->k == 1 && d0sq < thr * thr)	all	close-at-start counted at the wrong step
+M32	src/screen.c	const long K = (long)ceil(sp->window_s / h);	const long K = (long)floor(sp->window_s / h);	all	fast screen drops the last partial step
+M33	src/screen.c	if (j > c->i) test_pair(c, c->i, j);	if (j >= c->i) test_pair(c, c->i, j);	all	fast screen pairs an object with itself
+M34	src/analyze.c	 || e.id_a == e.id_b) continue;	) continue;	all	analysis keeps self-pair events
+M35	src/analyze.c	#define TIMELINE_MAX_S 2.0e6	#define TIMELINE_MAX_S 1.0e300	all	time index accepts any TCA (overflow of the 32-bit key)
+M36	src/analyze.c	    if (K > m) K = m;	    ;	all	analysis without the K clamp
+M37	src/catalog.c	{ c->objs.n--; return -1; }	return -1;	oom	cat_add leaves the object in the array when the index insert fails
+M38	src/ds/hash.c	    if (!h->b) return -1;	    ;	oom	hash_put on a table whose init failed
+M39	src/analyze.c	if (hash_put(&idx, B[e].id_a, v)) { idx_fail = 1; break; }	hash_put(&idx, B[e].id_a, v);	oom	analysis ignores a failed index insert

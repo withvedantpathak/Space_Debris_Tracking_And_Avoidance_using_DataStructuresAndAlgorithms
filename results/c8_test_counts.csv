@@ -1,0 +1,11 @@
+program,checks,failed
+test_ds,10188,0
+test_catalog,65,0
+test_propagate,37,0
+test_sgp4,306,0
+test_conjunction,36,0
+test_screen,197,0
+test_oom,24,0
+cli_smoke,46,0
+test_graph,22452,0
+test_property,12327,0

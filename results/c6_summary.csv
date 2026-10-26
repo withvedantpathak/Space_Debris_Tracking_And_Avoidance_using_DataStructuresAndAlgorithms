@@ -1,0 +1,6 @@
+variant,events_file,events,pairs,nodes,movable_nodes,components,single_pair_components,largest_nodes,largest_pairs,algorithms_agree,topk,greedy_cover,exact_cover,lower_bound,unresolvable_pairs,nontrivial_components,exact_finished,greedy_worse_components,greedy_seconds,exact_seconds
+reductions,results/c6_events_1h.csv,12504,11914,8923,8610,717,542,7197,10894,1,20,3737,3687,3310,99,175,175,1,0.002596,0.000648
+reductions,results/c6_events_3h.csv,37843,29229,12005,11248,950,623,9416,27551,1,20,4842,4839,4342,286,327,326,2,0.006573,9.710563
+reductions,results/c6_events_6h.csv,75894,52870,14306,13046,895,507,11045,50435,1,20,5614,5595,4921,619,388,387,8,0.011921,20.744130
+branch_and_bound_only,results/c6_events_1h.csv,12504,11914,8923,8610,717,542,7197,10894,1,20,3737,3737,3310,99,175,174,0,0.002696,2.262652
+branch_and_bound_only,results/c6_events_3h.csv,37843,29229,12005,11248,950,623,9416,27551,1,20,4842,4840,4342,286,327,326,2,0.006846,5.462331

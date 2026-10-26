@@ -1,0 +1,5 @@
+threshold_km,events,pairs,objects,components,largest_cluster,greedy_cover,exact_cover,exact_finished_all,lower_bound,milp_optimum,fastscreen_cpu_s
+1,48,47,79,37,5,39,39,yes,38,39,12.092
+2,174,173,322,154,5,154,154,yes,153,154,12.472
+5,2254,2204,3242,1044,24,1353,1346,yes,1299,1346,13.613
+10,12504,11914,8923,717,7197,3737,3687,yes,3310,3687,15.235

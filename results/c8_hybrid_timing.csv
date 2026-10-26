@@ -1,0 +1,11 @@
+step_s,method,events,cpu_seconds
+5,linear,2446,8.982
+5,hybrid,2254,9.336
+10,linear,2450,5.506
+10,hybrid,2254,5.978
+20,linear,2444,4.196
+20,hybrid,2253,5.017
+30,linear,2442,4.157
+30,hybrid,2253,5.541
+60,linear,2437,4.932
+60,hybrid,2250,8.043

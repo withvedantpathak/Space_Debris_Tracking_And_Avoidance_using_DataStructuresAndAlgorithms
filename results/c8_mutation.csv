@@ -1,0 +1,40 @@
+id,file,description,result,killed_by,seconds
+M01,src/ds/heap.c,"heap sift-up compares the wrong way",KILLED,test_ds,2
+M02,src/ds/heap.c,"heap sift-down picks the larger child",KILLED,test_ds,1
+M03,src/ds/heap.c,"heap sift-down stops on > instead of >= (equal keys; expected equivalent)",SURVIVED,,40
+M04,src/ds/dsu.c,"union by size attaches the larger set under the smaller",KILLED,test_property basic,22
+M05,src/ds/dsu.c,"component counter not decremented on union",KILLED,test_ds,1
+M06,src/ds/dsu.c,"path compression detaches the node",KILLED,test_ds,2
+M07,src/ds/kdtree.c,"k-d tree always splits on x (still correct, slower)",KILLED,test_property basic,22
+M08,src/ds/kdtree.c,"k-d radius query prunes the left side on equality (boundary)",KILLED,test_ds,2
+M09,src/ds/kdtree.c,"k-d radius query never visits the right side when the query is left of the pivot",KILLED,test_ds,1
+M10,src/ds/grid.c,"grid neighbourhood one cell too small",KILLED,test_ds,1
+M11,src/ds/grid.c,"grid cell index truncates instead of flooring (negative coordinates)",KILLED,test_property basic,22
+M12,src/ds/grid.c,"grid radius query excludes points exactly at the radius (boundary)",KILLED,test_ds,1
+M13,src/ds/avl.c,"AVL left-right case without the first rotation",KILLED,test_ds,2
+M14,src/ds/avl.c,"AVL right-left case without the first rotation",KILLED,test_ds,1
+M15,src/graph.c,"DSU components ignore the second endpoint",KILLED,test_graph,7
+M16,src/graph.c,"BFS hop distance not accumulated",KILLED,test_graph,8
+M17,src/mitigate.c,"branch and bound prunes too eagerly (can return a non-optimal cover)",KILLED,test_graph,7
+M18,src/mitigate.c,"matching lower bound counts every matched edge twice",KILLED,test_graph,8
+M19,src/rank.c,"top-K keeps equal keys (tie rule; fix-up pass should repair it)",SURVIVED,,37
+M20,src/rank.c,"top-K without the K > n clamp (overflow only under UBSan)",KILLED,test_property graph,23
+M21,src/catalog.c,"parser accepts eccentricity exactly 1",KILLED,test_property basic,23
+M22,src/catalog.c,"parser accepts inclination up to 181",KILLED,test_property basic,22
+M23,src/catalog.c,"mean-motion scope filter excludes the boundary value",KILLED,test_property basic,22
+M24,src/catalog.c,"time parser accepts hour 24",KILLED,test_catalog,2
+M25,src/propagate.c,"Kepler solver stops at a loose tolerance",KILLED,test_propagate,3
+M26,src/conjunction.c,"brute-force skip bound too small (can drop real events)",KILLED,test_conjunction,6
+M27,src/conjunction.c,"brute-force second pruning test too aggressive",KILLED,test_conjunction,6
+M28,src/conjunction.c,"event exactly at the end of the window dropped (boundary)",SURVIVED,,37
+M29,src/conjunction.c,"event comparison matches only far-apart events",KILLED,test_conjunction,6
+M30,src/conjunction.c,"best-per-pair keeps the farthest approach",KILLED,test_property meta,25
+M31,src/screen.c,"close-at-start counted at the wrong step",KILLED,test_screen,17
+M32,src/screen.c,"fast screen drops the last partial step",KILLED,test_property screen,37
+M33,src/screen.c,"fast screen pairs an object with itself",KILLED,test_screen,20
+M34,src/analyze.c,"analysis keeps self-pair events",KILLED,test_property analyze,23
+M35,src/analyze.c,"time index accepts any TCA (overflow of the 32-bit key)",KILLED,test_property analyze,23
+M36,src/analyze.c,"analysis without the K clamp",KILLED,test_property analyze,23
+M37,src/catalog.c,"cat_add leaves the object in the array when the index insert fails",KILLED,test_oom,22
+M38,src/ds/hash.c,"hash_put on a table whose init failed",KILLED,test_oom,1
+M39,src/analyze.c,"analysis ignores a failed index insert",KILLED,test_oom,22

@@ -1,0 +1,34 @@
+event_class,sgp4_threshold_km,our_threshold_km,sgp4_events,sgp4_events_found_by_ours,recall
+all,5,5,2254,2254,1.0
+all,5,10,2254,2254,1.0
+all,5,15,2254,2254,1.0
+all,5,20,2254,2254,1.0
+all,5,25,2254,2254,1.0
+all [precision],5,5,2254,2254,1.0
+all,10,10,12501,12501,1.0
+all,10,15,12501,12501,1.0
+all,10,20,12501,12501,1.0
+all,10,25,12501,12501,1.0
+all [precision],10,10,12504,12501,0.9998
+crossing (v_rel > 1 km/s),5,5,2209,2209,1.0
+crossing (v_rel > 1 km/s),5,10,2209,2209,1.0
+crossing (v_rel > 1 km/s),5,15,2209,2209,1.0
+crossing (v_rel > 1 km/s),5,20,2209,2209,1.0
+crossing (v_rel > 1 km/s),5,25,2209,2209,1.0
+crossing (v_rel > 1 km/s) [precision],5,5,2209,2209,1.0
+crossing (v_rel > 1 km/s),10,10,12364,12364,1.0
+crossing (v_rel > 1 km/s),10,15,12364,12364,1.0
+crossing (v_rel > 1 km/s),10,20,12364,12364,1.0
+crossing (v_rel > 1 km/s),10,25,12364,12364,1.0
+crossing (v_rel > 1 km/s) [precision],10,10,12367,12364,0.9998
+slow / co-orbiting (v_rel <= 1 km/s),5,5,45,45,1.0
+slow / co-orbiting (v_rel <= 1 km/s),5,10,45,45,1.0
+slow / co-orbiting (v_rel <= 1 km/s),5,15,45,45,1.0
+slow / co-orbiting (v_rel <= 1 km/s),5,20,45,45,1.0
+slow / co-orbiting (v_rel <= 1 km/s),5,25,45,45,1.0
+slow / co-orbiting (v_rel <= 1 km/s) [precision],5,5,45,45,1.0
+slow / co-orbiting (v_rel <= 1 km/s),10,10,137,137,1.0
+slow / co-orbiting (v_rel <= 1 km/s),10,15,137,137,1.0
+slow / co-orbiting (v_rel <= 1 km/s),10,20,137,137,1.0
+slow / co-orbiting (v_rel <= 1 km/s),10,25,137,137,1.0
+slow / co-orbiting (v_rel <= 1 km/s) [precision],10,10,137,137,1.0

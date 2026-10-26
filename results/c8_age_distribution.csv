@@ -1,0 +1,8 @@
+statistic,value
+objects_in_scope_before_leo_filter,18208.0
+age_percentile_50_days,0.181
+age_percentile_75_days,0.273
+age_percentile_90_days,0.356
+age_percentile_95_days,0.71
+age_percentile_99_days,1.85
+age_max_days,2.983

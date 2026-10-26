@@ -1,0 +1,14 @@
+captured: 2026-10-20T21:29:49Z
+kernel: Linux 6.8.0-138-generic x86_64
+cpu: AMD Ryzen 9 8940HX with Radeon Graphics
+logical cpus: 2
+memory: MemTotal: 4009408 kB
+compiler: gcc (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0
+build flags: gcc -O2 -std=c99 -Wall -Isrc ... -lm (scripts/build.sh); timing is clock() CPU time, single thread
+python: Python 3.10.12
+numpy: 2.2.6
+pandas: 2.3.3
+scipy: 1.15.3
+matplotlib: 3.10.9
+sgp4: 2.27
+note: the machine is a virtual machine on the project owner's laptop (2 logical CPUs visible); absolute times are indicative, ratios are the result

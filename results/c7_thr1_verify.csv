@@ -1,0 +1,2 @@
+events,pairs,milp_optimum,milp_seconds,in_greedy_cover_size,in_best_cover_size,in_greedy_cover_valid,in_best_cover_valid
+results/c7_events_thr1.csv,46,39,0.016,39,39,True,True

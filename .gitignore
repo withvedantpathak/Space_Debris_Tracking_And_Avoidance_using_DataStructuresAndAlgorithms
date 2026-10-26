@@ -1,0 +1,34 @@
+# build output
+*.o
+*.exe
+/build/
+/dist/
+# data and results scratch
+data/raw/
+data/history/
+results/tmp/
+results/tmp_*
+# earlier logistics draft (local reference only)
+archive/
+# editor / OS
+.idea/
+.vscode/
+*.log
+__pycache__/
+# Office lock and temp files
+~$*
+~WRL*.tmp
+*.tmp
+.DS_Store
+Thumbs.db
+
+# copyrighted papers (do not push)
+docs/papers/
+
+
+# internal working notes (kept local, not published)
+team/
+docs/ai_assistance.md
+docs/research_notes.md
+docs/visualisations.md
+docs/papers/

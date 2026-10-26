@@ -1,0 +1,41 @@
+metric,value,source
+scaling: rows identical to brute force,88/88,results/c7_scaling.csv
+scaling N=1000 brute median cpu s,0.305,results/c7_scaling.csv
+scaling N=1000 kd median cpu s,0.148,results/c7_scaling.csv
+scaling N=1000 grid median cpu s,0.187,results/c7_scaling.csv
+scaling N=2000 brute median cpu s,1.162,results/c7_scaling.csv
+scaling N=2000 kd median cpu s,0.354,results/c7_scaling.csv
+scaling N=2000 grid median cpu s,0.404,results/c7_scaling.csv
+scaling N=5000 brute median cpu s,6.808,results/c7_scaling.csv
+scaling N=5000 kd median cpu s,1.182,results/c7_scaling.csv
+scaling N=5000 grid median cpu s,1.134,results/c7_scaling.csv
+scaling N=10000 brute median cpu s,26.643,results/c7_scaling.csv
+scaling N=10000 kd median cpu s,3.132,results/c7_scaling.csv
+scaling N=10000 grid median cpu s,2.861,results/c7_scaling.csv
+threshold 1 km: events/largest cluster/exact cover,48/5/39,results/c7_threshold.csv
+threshold 2 km: events/largest cluster/exact cover,174/5/154,results/c7_threshold.csv
+threshold 5 km: events/largest cluster/exact cover,2254/24/1346,results/c7_threshold.csv
+threshold 10 km: events/largest cluster/exact cover,12504/7197/3687,results/c7_threshold.csv
+step 5 s: cpu s/candidates/recall,13.057/375749/1.0000,results/c7_step.csv
+step 10 s: cpu s/candidates/recall,14.337/772820/1.0000,results/c7_step.csv
+step 20 s: cpu s/candidates/recall,25.036/1789658/1.0000,results/c7_step.csv
+step 30 s: cpu s/candidates/recall,38.998/3061853/1.0000,results/c7_step.csv
+step 60 s: cpu s/candidates/recall,88.650/7078327/1.0000,results/c7_step.csv
+linear interp step 5 s: cpu s/recall/precision,9.306/0.9982/0.9199,results/c7_interp.csv
+linear interp step 10 s: cpu s/recall/precision,5.692/0.9956/0.9159,results/c7_interp.csv
+linear interp step 20 s: cpu s/recall/precision,4.285/0.9960/0.9186,results/c7_interp.csv
+linear interp step 30 s: cpu s/recall/precision,4.190/0.9929/0.9165,results/c7_interp.csv
+linear interp step 60 s: cpu s/recall/precision,5.018/0.9907/0.9163,results/c7_interp.csv
+cell kd scale NA: cpu s/peak RSS kB,2.294/22444,results/c7_cell.csv
+cell grid scale 0.25: cpu s/peak RSS kB,8.884/22796,results/c7_cell.csv
+cell grid scale 0.5: cpu s/peak RSS kB,3.129/22680,results/c7_cell.csv
+cell grid scale 1: cpu s/peak RSS kB,2.183/22708,results/c7_cell.csv
+cell grid scale 2: cpu s/peak RSS kB,2.336/22660,results/c7_cell.csv
+cell grid scale 4: cpu s/peak RSS kB,2.751/22712,results/c7_cell.csv
+age growth 0 km/day: events/largest cluster/exact cover,2254/24/1346,results/c7_age.csv
+age growth 1 km/day: events/largest cluster/exact cover,3046/169/1676,results/c7_age.csv
+age growth 2 km/day: events/largest cluster/exact cover,3900/1354/1956,results/c7_age.csv
+age growth 3 km/day: events/largest cluster/exact cover,4686/2502/2173,results/c7_age.csv
+C6 c6_events_1h.csv: events/greedy/exact cover,12504/3737/3687,results/c6_summary.csv
+C6 c6_events_3h.csv: events/greedy/exact cover,37843/4842/4839,results/c6_summary.csv
+C6 c6_events_6h.csv: events/greedy/exact cover,75894/5614/5595,results/c6_summary.csv

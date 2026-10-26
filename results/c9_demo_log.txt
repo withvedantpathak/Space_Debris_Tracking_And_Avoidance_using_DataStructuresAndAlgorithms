@@ -1,0 +1,28 @@
+=== 1. catalogue
+data/raw/active.csv: 16768 lines | added 16767, replaced 0, duplicate ignored 0, suborbital skipped 0, bad rows 0
+data/raw/cosmos-2251-debris.csv: 587 lines | added 586, replaced 0, duplicate ignored 0, suborbital skipped 0, bad rows 0
+data/raw/fengyun-1c-debris.csv: 1979 lines | added 1978, replaced 0, duplicate ignored 0, suborbital skipped 0, bad rows 0
+data/raw/iridium-33-debris.csv: 110 lines | added 109, replaced 0, duplicate ignored 0, suborbital skipped 0, bad rows 0
+merged catalogue: 19440 objects | LEO 18616 | MEO/other 195 | GEO 584 | HEO 45
+lowest perigee altitude 161 km, highest apogee altitude 364455 km, epochs 2026-09-21T05:49:13.801453 .. 2026-10-22T00:11:19.657830
+=== 2. screening with the k-d tree (1 h, 10 s step, 5 km, SGP4 + LEO scope)
+reference epoch 2026-10-20T05:29:17.253890, 18191 of 19440 objects used (fresh_days=3, min mean motion 6.4), flags=8+LEO scope 175-2000 km, window 3600 s, step 10.0 s, threshold 5.00 km
+pair checks 4833781, candidates after proven bound 772820, events 2254 on 2204 pairs, 84 pairs already within threshold at t=0, 13.56 s CPU
+PEAKRSS_KB,22404
+SUMMARY,data/raw/active.csv,18191,3600,10.0,5.00,8,4833781,772820,772820,2254,2204,84,13.556
+=== 3. clusters, top-K, mitigation
+pairs with relative speed > 1 km/s (crossing encounters): 2161 of 2204
+time index (AVL, height 13 for 2204 conjunctions): busiest 10-minute bin has 383 conjunction pairs
+events 2254, conjunction pairs (edges) 2204, objects involved (nodes) 3242, movable among them 3162
+components 1044 (619 are single pairs), largest 24 objects / 24 pairs, max degree 5; BFS/DFS/DSU agree: yes (0.1 / 0.0 / 0.0 ms)
+cascade reach from the busiest object of the largest cluster: 24 objects within 7 hops
+mitigation (min vertex cover): greedy 1353 objects (1.0 ms), exact/best 1346 (0.5 ms), lower bound 1299, unresolvable pairs (no movable object) 23
+exact search finished on 425 of 425 clusters with 3+ objects (largest finished: 24 objects); greedy strictly worse than optimal on 6
+C6SUMMARY,build/demo/events.csv,2254,2204,3242,3162,1044,619,24,24,1,10,1353,1346,1299,23,425,425,6,0.001038,0.000546
+=== files written to build/demo/
+events.csv
+out_components.csv
+out_cover.csv
+out_timeline.csv
+out_topk.csv
+out_topk_crossing.csv

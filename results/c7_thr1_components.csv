@@ -1,0 +1,3 @@
+component,nodes,edges,movable_nodes,lower_bound,greedy,exact,exact_complete,exact_nodes,greedy_us,exact_us,unresolved_edges
+7,5,6,5,2,2,2,1,1,1.0,3.0,0
+21,4,6,4,2,3,3,1,7,1.0,3.0,0
