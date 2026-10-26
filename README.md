@@ -83,9 +83,7 @@ Space_Debris_Tracking_And_Avoidance_using_DataStructuresAndAlgorithms/
 │   ├── bench_c1.sh, bench_c5.sh, run_baseline.sh
 │   └── *.py                    # Validation, cross-checks and plots
 ├── results/                # Generated metrics, CSV files and figures
-├── deliverables/
-│   ├── report/             # Final report (.docx)
-│   └── presentation/       # Final presentation (.pptx)
+├── deliverables/           # Final paper (.pdf) and presentation (.pptx)
 ├── paper/figures/          # Figures used in the report and this README
 └── docs/                   # Scope, propagation, fast screening, graph and mitigation,
                             #   experiments, verification, limitations, future work
